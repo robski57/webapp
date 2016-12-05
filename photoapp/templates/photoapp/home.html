@@ -1,0 +1,17 @@
+{% extends "photoapp/header.html" %}
+
+{% block content %}
+    <div id="home_copy">
+        {{ homepage.homecopy|safe}}
+    </div>
+    <a href="/beers/">View the Beers List!</a>
+    <ul id="home_tweets">
+        {% for tweet in tweets.tweets%
+        <li class="tweettext">{{ tweet.status}}</li>
+        <li class="tweettime">{{ tweet.date}}</li>
+        {% endfor %}
+    </ul>
+
+
+{% include "photoapp/include/htmlsnippet.html" %}
+{% endblock %}

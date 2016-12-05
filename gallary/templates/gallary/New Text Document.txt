@@ -1,0 +1,4 @@
+{% extends "photoapp/header.html %}
+{%block content%}
+
+{%endblock%}
