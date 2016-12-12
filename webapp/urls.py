@@ -15,11 +15,14 @@ Including another URLconf
 """
 from django.conf.urls import include, url
 from django.contrib import admin
+from django.conf.urls.static import static
+from django.conf import settings
+
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
-    url(r'^photoapp/', include('photoapp.urls')),
-    url(r'^gallary/', include('gallary.urls')),
-    url(r'^review/', include('review.urls')),
-    
+               url(r'^admin/', include(admin.site.urls)),
+               url(r'^', include('beer.urls')),
+               url(r'$', include('tinymce.urls')),
+
 ]
+	

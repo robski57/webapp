@@ -8,10 +8,10 @@ class BeerAdmin(admin.ModelAdmin):
 
 class BreweryAdmin(admin.ModelAdmin):
         prepopulated_fields = {'slug': ('name',)}
-        list_display = ('name', 'brewery', 'locality')
-    
-    
-admin.site.register(Beer, BeerAdmin)
-admin.site.register(Brewery)
 
-# Register your models here.
+class TinyMCEAdmin(admin.ModelAdmin):
+        class Media:
+                js = ('/media/js/tiny_mce/tiny_mce.js', '/media/js/tiny_mce/textareas.js',)        
+
+admin.site.register(Beer, BeerAdmin)
+admin.site.register(Brewery, BreweryAdmin)
