@@ -1,6 +1,7 @@
 from django.contrib import admin
 from beer.models import Beer, Brewery
 
+#The db model stores the names of beer, brewery's and locality
 class BeerAdmin(admin.ModelAdmin):
         prepopulated_fields = {'slug': ('name',)}
         list_display = ('name', 'brewery', 'locality')
